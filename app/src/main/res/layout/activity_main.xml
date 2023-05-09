@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="-101dp"
+    tools:layout_editor_absoluteY="114dp">
+
+    <ImageView
+        android:id="@+id/sleep_circle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/circle" />
+
+    <ImageView
+        android:id="@+id/sleep_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/sleep_txtTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.924"
+        app:srcCompat="@drawable/sleep"
+        app:tint="#03A9F4" />
+
+    <Chronometer
+        android:id="@+id/sleep_txtTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/sleep_circle"
+        app:layout_constraintHorizontal_bias="0.219"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sleep_target"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/ 8 hours"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toEndOf="@+id/sleep_txtTime"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sleep_target_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Daily Sleep Target"
+        android:textColor="#3F51B5"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleep_txtTime" />
+
+    <Button
+        android:id="@+id/sleep_btnStop"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#FFFFFF"
+        android:hapticFeedbackEnabled="false"
+        android:onClick="onClickStop"
+        android:text="Stop"
+        android:textColor="#FFFFFF"
+        android:textSize="11dp"
+        app:icon="@drawable/baseline_alarm_24"
+        app:iconGravity="textTop"
+        app:iconTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleep_target_txt" />
+
+    <Button
+        android:id="@+id/sleep_btnReset"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onClickReset"
+        android:text="Reset"
+        android:textColor="#FFFFFF"
+        android:textSize="10dp"
+        app:backgroundTint="#3F51B5"
+        app:icon="@drawable/baseline_alarm_24"
+        app:iconGravity="textTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleep_target_txt" />
+
+    <Button
+        android:id="@+id/sleep_btnStart"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="onClickStart"
+        android:shadowColor="@color/black"
+        android:text="sleep"
+        android:textColor="#000000"
+        android:textSize="10dp"
+        app:backgroundTint="#FFFFFF"
+        app:circularflow_angles="100"
+        app:icon="@drawable/baseline_alarm_24"
+        app:iconGravity="textTop"
+        app:iconTint="#03A9F4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sleep_target_txt"
+        tools:ignore="DuplicateClickableBoundsCheck" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_nav_manu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
